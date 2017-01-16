@@ -38,8 +38,8 @@
 			<td><%= inventory.quantity %></td>
 			<td><%= inventory.status %></td>
 			<td><%= inventory.lot %></td>
-			<td><%= inventory.ship_date.strftime("%d %b, %Y") %></td>
-			<td><%= inventory.extract_date.strftime("%d %b, %Y") if inventory.extract_date.present? %></td>
+			<td><%= inventory.ship_date.strftime("%m/%d/%Y") %></td>
+			<td><%= inventory.extract_date.strftime("%m/%d/%Y") if inventory.extract_date.present? %></td>
 		</tr>
 	<% end %>
 	</tbody>

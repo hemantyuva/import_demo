@@ -10,7 +10,11 @@ class Inventory < ActiveRecord::Base
 		  		quantity = item[:quantity]
 		  		status = item[:status]
 		  		lot = item[:lot]
-		  		ship_date = item[:last_ship_date].split("-")[1]+"-"+item[:last_ship_date].split("-")[0]+"-"+item[:last_ship_date].split("-")[2]
+		  		if item[:due_date].present?
+		  			ship_date = item[:due_date].split("-")[1]+"-"+item[:due_date].split("-")[0]+"-"+item[:due_date].split("-")[2]
+		  		else
+		  			ship_date = item[:last_ship_date].split("-")[1]+"-"+item[:last_ship_date].split("-")[0]+"-"+item[:last_ship_date].split("-")[2]
+		  		end 
 		  		exact_date = ship_date.to_date
 		  		Inventory.create(org_number: org, quantity: quantity, status: status, lot: lot, ship_date: ship_date,inventory_type: action,extract_date: right_date)
 		  	end
