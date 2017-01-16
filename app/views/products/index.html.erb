@@ -1,0 +1,35 @@
+<h1>Product Data Import</h1>
+<div class="col-md-6">
+	<%= form_tag import_products_path, multipart: true do %>
+	  <div class="col-md-6">
+	  <%= file_field_tag :file %>
+	  </div>
+	  <div class="col-md-6">
+	  <%= submit_tag "Import" %>
+	 	</div>
+	<% end %>
+</div>
+
+<div class="clearfix"></div>
+<table class="table table-bordered top-50">
+	<thead>
+		<tr>
+			<th>Item Number</th>
+			<th>Description</th>
+			<th>Status</th>
+			<th>Category</th>
+			<th>Sales Type</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products.each_with_index do |product,index| %>
+			<tr>
+				<td><%=index+1 %></td>
+				<td><%=product.description %></td>
+				<td><%=product.item_status %></td>
+				<td><%=product.category %></td>
+				<td><%=product.salary_type %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

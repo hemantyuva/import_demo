@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  org_number: 1
+  quantity: 1
+  status: MyString
+  lot: 1
+  ship_date: 2017-01-16 16:31:49
+
+two:
+  org_number: 1
+  quantity: 1
+  status: MyString
+  lot: 1
+  ship_date: 2017-01-16 16:31:49
